@@ -27,7 +27,7 @@ app.get('/ai', (req, res) => {
 app.post('/ai', async (req, res) => {
     const prompt = req.body;
     const image = prompt.image.replace(/^data:\w+\/\w+;\w+,/,"");
-    console.log(image,"==================");
+    console.log(image.slice(0,20),"==================");
 
     const ans = await run(image)
     console.log(ans);
@@ -38,5 +38,5 @@ app.use(express.static('public')); // This allows CSS, JS, and images to be acce
 
 
 app.listen(PORT, () => {
-    console.log(`Server is running on port https://localhost:${PORT}`);
+    console.log(`Server is running on port http://localhost:${PORT}`);
 })
