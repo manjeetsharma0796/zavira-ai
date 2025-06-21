@@ -1,5 +1,5 @@
 const express = require('express');
-const run = require('./ai');
+const run = require('./a3');
 const cors = require('cors');
 const path = require('path');
 

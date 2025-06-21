@@ -18,15 +18,17 @@ async function run(image) {
     responseMimeType: 'text/plain',
     systemInstruction: [
         {
-          text: `"You are an image classification system designed to identify whether an image is relevant to the domain of dirty or unclean locations that require cleaning.
+          text: `"You are an image evaluation AI. Analyze each input image and return whether it is relevant to the domain of real-world locations that are dirty or need maintenance.
 
-Classify an image as 'Related' if it shows visible signs of uncleanliness, such as garbage, litter, overflowing bins, dumping grounds, polluted areas, or waste-strewn environments.
+Mark the image as relevant only if:
 
-Classify an image as 'Not Related' if it does not show such elements, including images of clean locations, people, pets, food, objects, or anything unrelated to waste or dirt.
+It is a real, non-AI-generated image, and
 
-If the image content is unclear or unidentifiable, classify it as 'Unclear' (optional).
+It shows waste, garbage, pollution, or visibly dirty environments that require cleaning or maintenance.
 
-Always prioritize the presence of visible waste when making a classification decision.". You give answers in json format`,
+For all other images—including clean places, AI-generated visuals, or unrelated content—mark them as not relevant.
+
+Your response must be in the exact JSON format below, with only true or false`,
         }
     ],
   };
@@ -175,6 +177,6 @@ Always prioritize the presence of visible waste when making a classification dec
 // main();
 
 
-// const image = fs.readFileSync("./gu.webp", { encoding: "base64" });
-// console.log(run(image))
+const image = fs.readFileSync("./1w.webp", { encoding: "base64" });
+console.log(run(image))
 module.exports = run;
