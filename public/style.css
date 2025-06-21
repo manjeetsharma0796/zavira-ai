@@ -1,0 +1,230 @@
+/* video hatao
+nav bar lagao */
+
+
+* {
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #07fd4d;
+    --secondary-color: #27ae60;
+    --text-color: #333;
+    --bg-color: #f4f6f7;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+nav {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 50px;
+}
+
+.logo {
+    padding: 2px 2px;
+    background-color: rgba(251, 254, 250, 0.79);
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 65px;
+    height: 60px;
+    margin-right: 10px;
+}
+
+.logo span {
+    font-size: 20px;
+    font-family: "Rowdies", sans-serif;
+    font-weight: 300;
+    color: rgb(2, 150, 27);
+}
+
+/* Navigation Buttons */
+/* .nav-buttons button {
+    padding: 8px 16px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 20px;
+} */
+
+.diagnose {
+    font-weight: bolder;
+    padding: 8px 16px;
+    font-size: 14px;
+    background: rgba(1, 247, 42, 0.922);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.container {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 680px;
+    z-index: 10;
+}
+
+.bg-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0);
+    border-radius: 12px;
+    /* box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08); */
+    padding: 33px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* .card:hover {
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+} */
+
+h2 {
+    font-family: "Rowdies", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: rgb(2, 150, 27);
+    margin-bottom: 20px;
+    font-size: xxx-large;
+    text-shadow: 2px 2px 4px rgba(149, 144, 144, 0.7);
+}
+
+.upload-section {
+    margin-bottom: 20px;
+}
+
+.upload-btn {
+    font-weight: bolder;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    gap: 10px;
+}
+
+.upload-btn:hover {
+    background-color: var(--secondary-color);
+}
+
+.upload-icon {
+    font-size: 24px;
+    font-weight: 300;
+}
+
+.image-preview {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-top: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.diagnose-btn {
+    font-weight: bolder;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.diagnose-btn:disabled {
+    background-color: #adb2b5;
+    cursor: not-allowed;
+}
+
+.result-container {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    max-height: 60px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.result-container.expanded {
+    max-height: 600px;
+}
+
+.result-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    cursor: pointer;
+    background-color: #f9f9f9;
+}
+
+.result-header h3 {
+    color: var(--text-color);
+}
+
+.toggle-icon {
+    transition: transform 0.3s ease;
+}
+
+.result-container.expanded .toggle-icon {
+    transform: rotate(180deg);
+}
+
+.result-details {
+    padding: 15px;
+    text-align: left;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.result-details h4 {
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.result-details ul {
+    padding-left: 20px;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+    .card {
+        padding: 20px;
+    }
+}
